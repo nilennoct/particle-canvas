@@ -1,0 +1,69 @@
+body {
+  overflow: hidden;
+  margin: 0;
+  background: #00346e -webkit-linear-gradient(top, #003f8e 0%, #002451 120%) no-repeat;
+  background: #00346e linear-gradient(top, #003f8e 0%, #002451 120%) no-repeat;
+  color: #666;
+  font: 16px/1.5 "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.canvas-main {
+  width: 100%;
+  height: 100%;
+}
+
+.canvas-sample {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+}
+
+.ui {
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  width: 300px;
+  margin-left: -150px;
+  z-index: 1;
+}
+
+.ui-input {
+  box-sizing: border-box;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  outline: none;
+
+  &:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  &:focus {
+    background: rgba(255, 255, 255, 0.1);
+
+    & + .ui-return {
+      display: block;
+    }
+  }
+}
+
+.ui-return {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 3px 2px 0 2px;
+  font-size: 10px;
+  line-height: 10px;
+  color: #fff;
+  border: 1px solid #fff;
+  opacity: 0.5;
+}
