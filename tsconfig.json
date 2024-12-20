@@ -3,10 +3,9 @@
     "target": "es2019",
     "module": "commonjs",
     "moduleResolution": "node",
+    "skipLibCheck": true,
     "strict": true,
     "jsx": "react"
   },
-  "include": [
-    "src"
-  ]
+  "include": ["src"]
 }

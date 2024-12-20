@@ -47,5 +47,3 @@ export class ParticleGenerator {
         return this.particles;
     }
 }
-
-

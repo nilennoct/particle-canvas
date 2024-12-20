@@ -5,8 +5,7 @@ export class Point {
     constructor(
         public x: number = 0,
         public y: number = 0,
-    ) {
-    }
+    ) {}
 
     shuffle(radius: number = Settings.originRadius) {
         radius = radius * Math.random();
@@ -33,4 +32,3 @@ export class Point {
         return 'Point(' + this.x + ', ' + this.y + ')';
     }
 }
-

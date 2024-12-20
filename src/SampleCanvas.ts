@@ -5,7 +5,9 @@ import { Vector } from './Vector';
 
 export class SampleCanvas {
     canvas = document.createElement('canvas');
-    context = this.canvas.getContext('2d')!;
+    context = this.canvas.getContext('2d', {
+        willReadFrequently: true,
+    })!;
     gap = Settings.gap || 5;
     fontSize = 500;
     origin = new Point();
@@ -20,8 +22,8 @@ export class SampleCanvas {
     }
 
     resize(width: number, height: number) {
-        this.canvas.width = Math.floor(width * 0.8 / this.gap) * this.gap;
-        this.canvas.height = Math.floor(height * 0.8 / this.gap) * this.gap;
+        this.canvas.width = Math.floor((width * 0.8) / this.gap) * this.gap;
+        this.canvas.height = Math.floor((height * 0.8) / this.gap) * this.gap;
 
         this.initContext();
 
@@ -57,7 +59,7 @@ export class SampleCanvas {
 
         this.particleGenerator.reset();
 
-        for (let i = 0; i < data.length; i += (4 * this.gap)) {
+        for (let i = 0; i < data.length; i += 4 * this.gap) {
             if (data[i + 3] > 0) {
                 const particle = this.particleGenerator.getParticle(this.origin);
 
@@ -109,7 +111,7 @@ export class SampleCanvas {
     private measureText(text: string) {
         const fontSize = Math.min(
             Math.floor(this.canvas.height * 0.8),
-            this.canvas.width / this.context.measureText(text).width * this.fontSize,
+            (this.canvas.width / this.context.measureText(text).width) * this.fontSize,
         );
 
         this.context.font = 'bold ' + fontSize + 'px Helvetica Neue, Helvetica, Arial, sans-serif';

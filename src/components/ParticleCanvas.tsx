@@ -106,8 +106,5 @@ export function ParticleCanvas({ text, timestamp }: ParticleCanvasProps) {
         requestAnimationFrame(loop);
     }
 
-    return <canvas
-        className="canvas-main"
-        ref={canvasRef}
-    />;
+    return <canvas className="canvas-main" ref={canvasRef} />;
 }

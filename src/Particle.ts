@@ -94,5 +94,3 @@ export class Particle {
         this.state = ParticleState.Idle;
     }
 }
-
-

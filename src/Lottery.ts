@@ -19,8 +19,7 @@ export class Lottery {
                 this.result = lottery.result;
 
                 return;
-            } catch {
-            }
+            } catch {}
         } else {
             this.id = `lottery-${Date.now()}`;
         }

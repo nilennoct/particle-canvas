@@ -7,7 +7,7 @@ module.exports = {
     },
     output: {
         path: path.resolve('dist'),
-        libraryTarget: 'var',
+        // libraryTarget: 'var',
     },
     module: {
         rules: [
@@ -16,16 +16,13 @@ module.exports = {
                 loader: 'ts-loader',
                 exclude: /node_modules/,
                 options: {
+                    transpileOnly: true,
                     onlyCompileBundledFiles: true,
                 },
             },
             {
                 test: /\.(css|less)$/,
-                use: [
-                    'style-loader',
-                    'css-loader',
-                    'less-loader',
-                ],
+                use: ['style-loader', 'css-loader', 'less-loader'],
             },
         ],
     },

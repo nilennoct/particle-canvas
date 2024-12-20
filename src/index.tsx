@@ -8,28 +8,30 @@ function App() {
     const [text, setText] = React.useState('Good luck!');
     const [timestamp, setTimestamp] = React.useState(0);
 
-    return <div>
-        <ParticleCanvas text={text} timestamp={timestamp}/>
+    return (
+        <div>
+            <ParticleCanvas text={text} timestamp={timestamp} />
 
-        <div className="ui">
-            <input
-                className="ui-input"
-                value={value}
-                autoFocus
-                onChange={(event) => setValue(event.target.value)}
-                onKeyDown={(event) => {
-                    if (event.key === 'Enter') {
-                        setText(value);
+            <div className="ui">
+                <input
+                    className="ui-input"
+                    value={value}
+                    autoFocus
+                    onChange={(event) => setValue(event.target.value)}
+                    onKeyDown={(event) => {
+                        if (event.key === 'Enter') {
+                            setText(value);
 
-                        if (value[0] === '#') {
-                            setTimestamp(Date.now());
+                            if (value[0] === '#') {
+                                setTimestamp(Date.now());
+                            }
                         }
-                    }
-                }}
-            />
-            <span className="ui-return">↵</span>
+                    }}
+                />
+                <span className="ui-return">↵</span>
+            </div>
         </div>
-    </div>;
+    );
 }
 
-render(<App/>, document.querySelector('#app'));
+render(<App />, document.querySelector('#app'));
